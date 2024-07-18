@@ -5,6 +5,7 @@ import subwaySurferVideo from './vid.mp4'; // Ensure this file is in the src fol
 function App() {
     const [youtubeLink, setYoutubeLink] = useState('');
     const [videoId, setVideoId] = useState('');
+    const [videoTitle, setVideoTitle] = useState('');
 
     const handleInputChange = (e) => {
         setYoutubeLink(e.target.value);
@@ -14,6 +15,8 @@ function App() {
         e.preventDefault();
         const videoId = youtubeLink.split('v=')[1];
         setVideoId(videoId);
+        // Fetch video title using YouTube API or set a default title
+        setVideoTitle('Embedded YouTube Video');
     };
 
     return (
@@ -33,6 +36,7 @@ function App() {
             <div className="youtube-video">
                 {videoId && (
                     <iframe 
+                        title={videoTitle} // Provide a meaningful title here
                         width="100%" 
                         height="100%" 
                         src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} 

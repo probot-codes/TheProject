@@ -1,0 +1,24 @@
+        body {
+            background-color: #f8f8f8;
+            transition: background-color 1s linear;
+        }
+        body.darktheme {
+           background-color: #282c34;
+        }
+        br {
+          user-select: none;
+        }
+
+/* Ensure that video containers have no padding or margins */
+#leftMemePlayer, #rightMemePlayer {
+  width: 250px;
+  height: auto;
+  overflow: hidden;
+}
+/* 
+#leftMemePlayer iframe, #rightMemePlayer iframe {
+  width: 100%; 
+  height: 100%; 
+  border: none; 
+  display: block; 
+} */

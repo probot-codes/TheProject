@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="author" content="kkchengaf (John)">
+    <meta name="description" content="Playing multiple YouTube videos at the same time. Watching multiple live streams with live chat support. Adjust video layouts to best fit your preference!">
+    <meta name="google-site-verification" content="aGqaF2FqE0Z8Vl8z9-x4_QSSrOARrvSJsTggaoFUV_8" />
+
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/textarea.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/sidepanel.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/textmode.css">
+
+    <title>Multiple Embedded Youtube Player</title>
+  </head>
+
+  <body id="body" onload="restoreState();"  class="darktheme">
+    <div id="sidepan" class="sidepanel darktheme hide">
+    <div id="sidepanbar" class="sidepanelbar darktheme" onclick="toggleSidePanel()"></div>
+    <div class="sidepaneldiv" onclick="toggleSidePanelKeyOnly()"><span class="sidepaneldes">Key Only</span></div><br>
+    <button class="keybtn" onclick="togglePlayAll()">P</button><span id="playdes" class="btndes"><span class="mode on">Play</span>/<span class="mode">Pause</span> all videos</span><br>
+    <button class="keybtn" onclick="toggleMuteAll()">M</button><span id="mutedes" class="btndes"><span class="mode on">Mute</span>/<span class="mode">Unmute</span> all videos</span><br>
+    <button class="keybtn" onclick="toggleUrlArea()">H</button><span id="textareades" class="btndes"><span class="mode on">Hide</span>/<span class="mode">Show</span> text box</span><br>
+    <button class="keybtn" onclick="toggleSlider()">S</button><span id="sliderdes" class="btndes"><span class="mode">Hide</span>/<span class="mode on">Show</span> resize Sliders</span><br>
+    <button class="keybtn" onclick="toggleDarkTheme()">D</button><span id="darkdes" class="btndes"><span class="mode on">Disable</span>/<span class="mode">Enable</span> Dark theme</span><br>
+    <button class="keybtn" onclick="toggleAspectRatioLock()">L</button><span id="aspectratiodes" class="btndes"><span class="mode on">Unlock</span>/<span class="mode">Lock</span> resize aspect ratio</span><br>
+    <button class="keybtn" onclick="setUniformSize()">K</button><span id="setsizedes" class="btndes"><span class="mode on">Set</span> all videos same size</span><br>
+    <button class="keybtn" onclick="syncReplay()">R</button><span id="syncdes" class="btndes"><span class="mode on">Sync</span> all replay (delay)</span><br>
+    <button class="keybtn" onclick="toggleLivechat()">C</button><span id="chatdes" class="btndes"><span class="mode">Hide</span>/<span class="mode on">Show</span> live Chat</span><br>
+    <button class="keybtn" onclick="toggleLivechatDarkTheme()">N</button><span id="chatdarkdes" class="btndes"><span class="mode">Disable</span>/<span class="mode on">Enable</span> live chat dark theme</span><br>
+    <button class="keybtn" onclick="toggleSidePanel()">T</button><span id="sidepandes" class="btndes"><span class="mode on">Collapse</span>/<span class="mode">Expand</span> This Panel</span><br>
+    <div class="sidepaneldiv" onclick="window.open('https://github.com/kkchengaf/Multiple-Embedded-Youtube-Player')"><span class="sidepaneldes">Github @kkchengaf</span></div>
+    </div>
+
+    <div id="videoarea" style="flex-wrap: wrap;display:flex;">
+    </div>
+    <br>
+    <textarea id="urls" class="darktheme" rows="5" cols="50"  style="font-size:30px" oninput="parse()"
+              placeholder="Paste Youtube Video Links here&#10;https://www.youtube.com/watch?v=..."></textarea>
+    <div id="sliderarea"> </div>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="script/variable.js"></script>
+    <script src="script/html-object.js"></script>
+    <script src="script/embed-player.js"></script>
+    <script src="script/event-handler.js"></script>
+
+  </body>
+</html>

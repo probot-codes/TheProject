@@ -129,6 +129,10 @@
             'dQw4w9WgXcQ', // Rickroll
             'J---aiyznGQ', // Cat Video
             'iSgV0H4n4Ao', // Subway Surfers gameplay
+            'mI4Wu0Hx3Vc',
+            '-z0h3Qyg4e4',
+            'iSbLHrrqmoM',
+            'EzkUe9FzPQk'
             // Add more meme video IDs as needed
         ];
         return memeVideos[Math.floor(Math.random() * memeVideos.length)];
